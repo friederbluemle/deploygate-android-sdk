@@ -49,7 +49,7 @@ import java.util.concurrent.CountDownLatch;
  * <code>&lt;uses-permission android:name="android.permission.READ_LOGS" /&gt;</code>
  * in AndroidManifest.xml of your application.
  * </p>
- * 
+ *
  * @author tnj
  */
 public class DeployGate {
@@ -363,7 +363,7 @@ public class DeployGate {
      * explicitly to ensure the authority of this app to prevent casual
      * redistribution via DeployGate.
      * </p>
-     * 
+     *
      * @param app Application instance, typically just pass <em>this</em>.
      * @throws IllegalStateException if this called twice
      * @since r1
@@ -382,7 +382,7 @@ public class DeployGate {
      * {@link #install(Application, String, DeployGateCallback, boolean)}
      * instead.
      * </p>
-     * 
+     *
      * @param app Application instance, typically just pass <em>this</em>.
      * @param author author username of this app.
      * @throws IllegalStateException if this called twice
@@ -409,7 +409,7 @@ public class DeployGate {
      * explicitly to ensure the authority of this app to prevent casual
      * redistribution via DeployGate.
      * </p>
-     * 
+     *
      * @param app Application instance, typically just pass <em>this</em>.
      * @param callback Callback interface to listen events.
      * @throws IllegalStateException if this called twice
@@ -430,7 +430,7 @@ public class DeployGate {
      * {@link #install(Application, String, DeployGateCallback, boolean)}
      * instead.
      * </p>
-     * 
+     *
      * @param app Application instance, typically just pass <em>this</em>.
      * @param author author username of this app.
      * @param callback Callback interface to listen events.
@@ -451,7 +451,7 @@ public class DeployGate {
      * explicitly to ensure the authority of this app to prevent casual
      * redistribution via DeployGate.
      * </p>
-     * 
+     *
      * @param app Application instance, typically just pass <em>this</em>.
      * @param callback Callback interface to listen events. Can be null.
      * @param forceApplyOnReleaseBuild if you want to keep DeployGate alive on
@@ -468,7 +468,7 @@ public class DeployGate {
      * Install DeployGate on your application instance and register a callback
      * listener. Call this method inside of your {@link Application#onCreate()}
      * once.
-     * 
+     *
      * @param app Application instance, typically just pass <em>this</em>.
      * @param author author username of this app. Can be null.
      * @param callback Callback interface to listen events. Can be null.
@@ -498,7 +498,7 @@ public class DeployGate {
      * Note that after calling this, {@link #isInitialized()} will changed to
      * false immediately and any call to <tt>is*()</tt> will be blocked until
      * refreshing get finished.
-     * 
+     *
      * @since r1
      */
     public static void refresh() {
@@ -522,7 +522,7 @@ public class DeployGate {
      * {@link #unregisterCallback(DeployGateCallback)} when the callback is no
      * longer needed (e.g., on destroying an activity.) If the listener has
      * already in the callback list, just ignored.
-     * 
+     *
      * @param listener callback listener
      * @param refreshImmediately if you want to receive current states, set this
      *            true.
@@ -546,7 +546,7 @@ public class DeployGate {
     /**
      * Unregister a callback listener. If the listener was not registered, just
      * ignored.
-     * 
+     *
      * @param listener callback listener to be removed
      * @since r1
      */
@@ -562,7 +562,7 @@ public class DeployGate {
     /**
      * Get whether SDK is completed its intialization process and ready after
      * {@link #install(Application)}. This call will never blocked.
-     * 
+     *
      * @return true if SDK is ready. false otherwise. If no install() called
      *         ever, this always returns false.
      * @since r1
@@ -583,7 +583,7 @@ public class DeployGate {
      * {@link #isInitialized()} is true before calling this. (Or consider using
      * {@link DeployGateCallback#onInitialized(boolean)} callback.)
      * </p>
-     * 
+     *
      * @return true if valid DeployGate client is available. false otherwise. If
      *         no install() called ever, this always returns false.
      * @since r1
@@ -606,7 +606,7 @@ public class DeployGate {
      * {@link #isInitialized()} is true before calling this. (Or consider using
      * {@link DeployGateCallback#onInitialized(boolean)} callback.)
      * </p>
-     * 
+     *
      * @return true if DeployGate knows and manages this package. false
      *         otherwise. If no install() called ever, this always returns
      *         false.
@@ -632,7 +632,7 @@ public class DeployGate {
      * {@link #isInitialized()} is true before calling this. (Or consider using
      * {@link DeployGateCallback#onInitialized(boolean)} callback.)
      * </p>
-     * 
+     *
      * @return true if current DeployGate user has available list which contains
      *         this application. false otherwise. If no install() called ever,
      *         this always returns false.
@@ -656,7 +656,7 @@ public class DeployGate {
      * {@link #isInitialized()} is true before calling this. (Or consider using
      * {@link DeployGateCallback#onInitialized(boolean)} callback.)
      * </p>
-     * 
+     *
      * @return Current user of DeployGate. May be null.
      * @since r1
      */
@@ -683,7 +683,7 @@ public class DeployGate {
      * {@link #isInitialized()} is true before calling this. (Or consider using
      * {@link DeployGateCallback#onInitialized(boolean)} callback.)
      * </p>
-     * 
+     *
      * @return Owner User or Organization of current app. May be null.
      * @since r2
      */
@@ -699,7 +699,7 @@ public class DeployGate {
      * Record ERROR level event on DeployGate. Log message will immediately send
      * to the server so you may see it on your dashboard. Nothing happen when
      * DeployGate is not available, i.e. {@link #isAuthorized()} is not true.
-     * 
+     *
      * @param message Message body to be send. May be truncated if it's too
      *            long.
      * @since r1
@@ -714,7 +714,7 @@ public class DeployGate {
      * Record WARN level event on DeployGate. Log message will immediately send
      * to the server so you may see it on your dashboard. Nothing happen when
      * DeployGate is not available, i.e. {@link #isAuthorized()} is not true.
-     * 
+     *
      * @param message Message body to be send. May be truncated if it's too
      *            long.
      * @since r1
@@ -729,7 +729,7 @@ public class DeployGate {
      * Record DEBUG level event on DeployGate. Log message will immediately send
      * to the server so you may see it on your dashboard. Nothing happen when
      * DeployGate is not available, i.e. {@link #isAuthorized()} is not true.
-     * 
+     *
      * @param message Message body to be send. May be truncated if it's too
      *            long.
      * @since r1
@@ -744,7 +744,7 @@ public class DeployGate {
      * Record INFO level event on DeployGate. Log message will immediately send
      * to the server so you may see it on your dashboard. Nothing happen when
      * DeployGate is not available, i.e. {@link #isAuthorized()} is not true.
-     * 
+     *
      * @param message Message body to be send. May be truncated if it's too
      *            long.
      * @since r1
@@ -760,7 +760,7 @@ public class DeployGate {
      * send to the server so you may see it on your dashboard. Nothing happen
      * when DeployGate is not available, i.e. {@link #isAuthorized()} is not
      * true.
-     * 
+     *
      * @param message Message body to be send. May be truncated if it's too
      *            long.
      * @since r1
@@ -859,7 +859,7 @@ public class DeployGate {
                         }
                     }
                 }
-                
+
                 if (!logcatBuf.isEmpty())
                     send(logcatBuf);
                 // EOF, stop it
@@ -901,7 +901,7 @@ public class DeployGate {
     void sendCrashReport(/* non-null */ Throwable ex) {
         if (mRemoteService == null)
             return;
-        
+
         Bundle extras = new Bundle();
         try {
             if (getDeployGateVersionCode() >= SERIALIZED_EXCEPTION_SUPPORT_CLIENT_VERSION) {
@@ -947,14 +947,14 @@ public class DeployGate {
             Log.w(TAG, "failed to send custom log: " + e.getMessage());
         }
     }
-    
+
     /**
      * Capture current LogCat and send it. This call will work asynchronously.
      * Capturing LogCat requires <code>android.permission.READ_LOGS</code> is
      * declared on your app AndroidManifest.xml, or your app is running on
      * Android 4.1 or higher. If LogCat is not available, this function simply
      * does nothing.
-     * 
+     *
      * @since r3
      */
     public static void requestLogCat() {

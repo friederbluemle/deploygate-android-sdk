@@ -7,7 +7,7 @@ import java.lang.Thread.UncaughtExceptionHandler;
 
 /**
  * Exception handler class that provides crash reporting feature of DeployGate.
- * 
+ *
  * @author tnj
  */
 class DeployGateUncaughtExceptionHandler implements UncaughtExceptionHandler {
